@@ -70,25 +70,18 @@ VEAI/
 
 ## 🛠️ Hardware Required
 
-### Core Components (~$350)
+### Core Components
 
-| Component | Cost |
-|-----------|------|
-| Laptop/PC (development) | $150 |
-| Raspberry Pi 4 | $55 |
-| ESP32 Dev Board | $10 |
-| SD Card 32GB | $12 |
-| Power Supply | $10 |
-| Pi Camera v2 | $25 |
-| INMP441 Microphone | $6 |
-| PAM8403 Amplifier | $5 |
-| 3W Speaker | $6 |
-| HC-SR04 | $4 |
-| PIR Sensor | $3 |
-| DHT22 | $5 |
-| Cables & Misc | $60 |
+See [BUDGET.md](BUDGET.md) for full breakdown - **Total: $400**
 
-**See [BUDGET.md](BUDGET.md) for full breakdown**
+| Category | Components |
+|----------|------------|
+| Computing | Laptop ($220), Raspberry Pi 4 ($55), ESP32 ($10), SD Card ($12), Power ($10) |
+| AI Eyes | Pi Camera v2 ($25), Camera Cable ($5) |
+| AI Ears | INMP441 Microphone ($6), Jumper Wires ($2) |
+| AI Voice | PAM8403 Amp ($5), 3W Speaker ($6), Audio Cables ($3) |
+| Sensors | HC-SR04 ($4), PIR ($3), DHT22 ($5) |
+| Misc | Power Strip, Cables, Breadboard, Case, etc. |
 
 ## 🚀 Quick Start
 
