@@ -1,0 +1,21 @@
+# VEAI Raspberry Pi Dependencies
+
+# Core
+pyserial>=3.5
+
+# Camera (optional)
+# pip install "picamera2[stream]"  
+
+# Computer Vision (optional)
+# opencv-python>=4.8.0
+# numpy>=1.24.0
+
+# Voice (optional)
+# gTTS>=2.4.0          # Google TTS
+# pyttsx3>=2.90        # Offline TTS
+# SpeechRecognition>=3.10.0  # Voice recognition
+
+# AI Models (optional)
+# transformers>=4.35.0  # Hugging Face
+# torch>=2.0.0          # PyTorch
+# tensorflow>=2.13.0    # TensorFlow
