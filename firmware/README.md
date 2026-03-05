@@ -29,7 +29,7 @@ pip install -r requirements.txt
 
 1. Open Arduino IDE
 2. Install ESP32 board support
-3. Open `firmware/esp32/firmware.ino`
+3. Open firmware/esp32/firmware.ino
 4. Select your ESP32 board
 5. Upload
 
@@ -71,7 +71,7 @@ SENSOR:MOTION=1,DIST=10.5,TEMP=25.0,HUM=60.0
 
 ## Next Steps
 
-- [ ] Install AI models to `firmware/models/`
-- [ ] Add voice recognition
-- [ ] Add computer vision processing
-- [ ] Test full integration
+- Install AI models to firmware/models/
+- Add voice recognition
+- Add computer vision processing
+- Test full integration

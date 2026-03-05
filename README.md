@@ -1,9 +1,9 @@
-# VEAI — Voice & Eyes & Ears Artificial Intelligence
+# VEAI - Voice & Eyes & Ears Artificial Intelligence
 
 ![VEAI Logo](logo.png)
 
-VEAI is a local AI interaction device that can **see, hear, and respond** in real time.
-It uses a **Raspberry Pi** for AI processing (Python/OpenCV/voice logic) and an **ESP32** for real-time sensor and hardware control.
+VEAI is a local AI interaction device that can see, hear, and respond in real time.
+It uses a Raspberry Pi for AI processing (Python/OpenCV/voice logic) and an ESP32 for real-time sensor and hardware control.
 
 ## Features (Prototype Goals)
 - Camera vision input (Pi Camera)
@@ -13,36 +13,36 @@ It uses a **Raspberry Pi** for AI processing (Python/OpenCV/voice logic) and an 
 - ESP32 sends real-time sensor data to Raspberry Pi over Serial/UART
 
 ## Repo Structure
-- `design/` — Cirkit Designer project files, diagrams, screenshots
-- `hardware/` — wiring notes and BOM
-- `software/esp32/` — ESP32 firmware
-- `software/raspberry_pi/` — Python code for Raspberry Pi AI logic
-- `docs/` — build notes and journal entries
+- design/ - Cirkit Designer project files, diagrams, screenshots
+- hardware/ - wiring notes and BOM
+- software/esp32/ - ESP32 firmware
+- software/raspberry_pi/ - Python code for Raspberry Pi AI logic
+- docs/ - build notes and journal entries
 
 ## Design Files
-See `design/cirkit/` and `design/screenshots/` for the circuit design.
+See design/cirkit/ and design/screenshots/ for the circuit design.
 
 ## Hardware Overview
 
 ### AI Eyes (Vision)
-- **Pi Camera** - Captures visual input for AI processing
+- Pi Camera - Captures visual input for AI processing
 - Connected to Raspberry Pi via CSI interface
 
 ### AI Ears (Audio Input)
-- **INMP441** - High-performance MEMS microphone
+- INMP441 - High-performance MEMS microphone
 - I2S interface for digital audio output
 
 ### AI Voice (Audio Output)
-- **PAM8403** - Class D audio amplifier
-- **3W Speaker** - Voice output
+- PAM8403 - Class D audio amplifier
+- 3W Speaker - Voice output
 
 ### Sensors
-- **HC-SR04** - Ultrasonic distance sensor
-- **PIR** - Passive infrared motion sensor
-- **DHT22** - Temperature and humidity sensor
+- HC-SR04 - Ultrasonic distance sensor
+- PIR - Passive infrared motion sensor
+- DHT22 - Temperature and humidity sensor
 
 ### Control
-- **ESP32** - Real-time sensor reading and hardware control
+- ESP32 - Real-time sensor reading and hardware control
 - Communicates with Raspberry Pi via UART/Serial
 
 ## Next Steps

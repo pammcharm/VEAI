@@ -60,6 +60,4 @@
 | Sensors | $15 |
 | Power | $35 |
 | Wiring & Misc | $12 |
-| **Total** | **~$204** |
-
-
+| Total | ~$204 |

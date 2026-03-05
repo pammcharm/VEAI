@@ -4,21 +4,21 @@
 
 ---
 
-## 💻 Computing (Required)
+## Computing (Required)
 
 | Item | Description | Est. Cost |
 |------|-------------|-----------|
-| **Laptop/PC** | For development and running AI models | $220 |
+| Laptop/PC | For development and running AI models | $220 |
 | Raspberry Pi 4 (4GB) | AI brain - voice/vision processing | $55 |
 | ESP32 Dev Board | Sensor controller | $10 |
 | 32GB SD Card | Raspberry Pi OS storage | $12 |
 | USB-C Power Supply (Pi) | 5V 3A for Raspberry Pi | $10 |
 
-**Computing Subtotal:** $237
+**Computing Subtotal:** $307
 
 ---
 
-## 👁️ AI Eyes (Vision)
+## AI Eyes (Vision)
 
 | Item | Description | Est. Cost |
 |------|-------------|-----------|
@@ -29,7 +29,7 @@
 
 ---
 
-## 👂 AI Ears (Audio Input)
+## AI Ears (Audio Input)
 
 | Item | Description | Est. Cost |
 |------|-------------|-----------|
@@ -40,7 +40,7 @@
 
 ---
 
-## 🗣️ AI Voice (Audio Output)
+## AI Voice (Audio Output)
 
 | Item | Description | Est. Cost |
 |------|-------------|-----------|
@@ -52,7 +52,7 @@
 
 ---
 
-## 📡 Sensors
+## Sensors
 
 | Item | Description | Est. Cost |
 |------|-------------|-----------|
@@ -64,19 +64,23 @@
 
 ---
 
-## 🔌 Power & Misc
+## Power & Misc
 
 | Item | Description | Est. Cost |
 |------|-------------|-----------|
 | USB Power Strip | 6-port power hub | $15 |
 | USB Cables | Various lengths | $10 |
-
+| Jumper Wires | M/M, M/F, F/F pack | $5 |
+| Breadboard | 400-point prototyping | $5 |
+| GPIO Header | Raspberry Pi connections | $3 |
+| Case for Pi | Protective case | $8 |
+| Heat Sinks | For Pi cooling | $5 |
 
 **Power & Misc Subtotal:** $51
 
 ---
 
-## 🧠 AI Models (Software - Free)
+## AI Models (Software - Free)
 
 | Model | Purpose | Cost |
 |-------|---------|------|
@@ -87,7 +91,7 @@
 
 ---
 
-## 📊 Budget Summary
+## Budget Summary
 
 | Category | Cost |
 |----------|------|
@@ -103,14 +107,14 @@
 
 ---
 
-## 🛒 Where to Buy
+## Where to Buy
 
 ### Best Prices (Recommended):
-- **Amazon** - Pi, ESP32, sensors, cables
-- **Adafruit** - Quality components, Pi Camera
-- **AliExpress** - Cheap sensors, wires (slow shipping)
-- **SparkFun** - Premium components
-- **Local electronics store** - Breadboards, wires
+- Amazon - Pi, ESP32, sensors, cables
+- Adafruit - Quality components, Pi Camera
+- AliExpress - Cheap sensors, wires (slow shipping)
+- SparkFun - Premium components
+- Local electronics store - Breadboards, wires
 
 ### Suggested Search Terms:
 - "Raspberry Pi 4 4GB kit"
@@ -120,17 +124,17 @@
 
 ---
 
-## 💡 Cost-Saving Tips
+## Cost-Saving Tips
 
-1. **Use existing laptop** - Already have one? Deduct $150
-2. **Buy used** - Raspberry Pi 3B+ works too ($25-30)
-3. **Skip Pi case** - $8 saved
-4. **Buy in bulk** - Wires, sensors cheaper in packs
-5. **Free AI models** - All software is open source!
+1. Use existing laptop - Already have one? Deduct $150
+2. Buy used - Raspberry Pi 3B+ works too ($25-30)
+3. Skip Pi case - $8 saved
+4. Buy in bulk - Wires, sensors cheaper in packs
+5. Free AI models - All software is open source!
 
 ---
 
-## 🎯 Alternative Budgets
+## Alternative Budgets
 
 ### Minimum Setup ($150)
 - Use existing PC/laptop
@@ -148,24 +152,24 @@
 
 ---
 
-## 📦 Priority Order
+## Priority Order
 
 ### Must Have (Phase 1):
 1. Raspberry Pi + SD Card + Power = $77
 2. ESP32 + USB Cable = $12
 3. Basic sensors = $12
-4. **Phase 1 Total: $101**
+4. Phase 1 Total: $101
 
 ### Should Have (Phase 2):
 5. Pi Camera = $25
 6. Microphone = $6
 7. Speaker + Amp = $11
-8. **Phase 2 Total: $42**
+8. Phase 2 Total: $42
 
 ### Nice to Have (Phase 3):
 9. Better case, cables, heat sinks = $20
 10. Additional sensors = $10
-11. **Phase 3 Total: $30**
+11. Phase 3 Total: $30
 
 ---
 
