@@ -1,36 +1,36 @@
-# VEAI — Voice, Eyes & Ears Artificial Intelligence
+# VEAI - Voice, Eyes & Ears Artificial Intelligence
 
 ![VEAI Logo](logo.png)
 
-## 🎯 Project Overview
+## Project Overview
 
-VEAI is a local AI-powered robot that can **see, hear, and speak** in real-time. It uses a Raspberry Pi for AI processing and an ESP32 for real-time sensor control.
+VEAI is a local AI-powered robot that can see, hear, and speak in real-time. It uses a Raspberry Pi for AI processing and an ESP32 for real-time sensor control.
 
-## 🤖 What Can VEAI Do?
+## What Can VEAI Do?
 
-### 👁️ AI Eyes (Vision)
+### AI Eyes (Vision)
 - Object detection using AI models
 - Face recognition
 - Hand tracking
 - Pose estimation
 - Real-time camera feed
 
-### 👂 AI Ears (Hearing)
+### AI Ears (Hearing)
 - Speech recognition (Whisper/Vosk)
 - Voice command processing
 - Audio capture via I2S microphone
 
-### 🗣️ AI Voice (Speaking)
+### AI Voice (Speaking)
 - Text-to-speech output
 - Interactive chatbot
 - Voice responses
 
-### 📡 Sensors
-- **PIR** - Motion detection
-- **HC-SR04** - Distance measurement
-- **DHT22** - Temperature & humidity
+### Sensors
+- PIR - Motion detection
+- HC-SR04 - Distance measurement
+- DHT22 - Temperature & humidity
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 VEAI/
@@ -68,11 +68,11 @@ VEAI/
     └── journal/      # Build notes
 ```
 
-## 🛠️ Hardware Required
+## Hardware Required
 
 ### Core Components
 
-See [BUDGET.md](BUDGET.md) for full breakdown - **Total: $400**
+See BUDGET.md for full breakdown - Total: $400
 
 | Category | Components |
 |----------|------------|
@@ -83,7 +83,7 @@ See [BUDGET.md](BUDGET.md) for full breakdown - **Total: $400**
 | Sensors | HC-SR04 ($4), PIR ($3), DHT22 ($5) |
 | Misc | Power Strip, Cables, Breadboard, Case, etc. |
 
-## 🚀 Quick Start
+## Quick Start
 
 ### 1. Clone the Repository
 ```bash
@@ -105,7 +105,7 @@ python install_models.py quick
 ### 3. Flash ESP32
 1. Open Arduino IDE
 2. Install ESP32 board support
-3. Open `firmware/esp32/firmware.ino`
+3. Open firmware/esp32/firmware.ino
 4. Upload to ESP32
 
 ### 4. Run the System
@@ -120,20 +120,20 @@ python veai_ui.py
 ```
 
 ### 5. Open Control Panel
-Navigate to: `http://localhost:8000`
+Navigate to: http://localhost:8000
 
-## 🎨 GUI Control Panel
+## GUI Control Panel
 
 The web-based control panel includes:
 
-- **Dashboard** - Real-time sensor readings, quick actions
-- **AI Vision** - Object detection, face, hand, pose modes
-- **AI Voice** - Voice recording and TTS
-- **Sensors** - All sensor readings
-- **Chat** - Talk to VEAI's NLP brain
-- **Settings** - Configure connection and models
+- Dashboard - Real-time sensor readings, quick actions
+- AI Vision - Object detection, face, hand, pose modes
+- AI Voice - Voice recording and TTS
+- Sensors - All sensor readings
+- Chat - Talk to VEAI's NLP brain
+- Settings - Configure connection and models
 
-## 💻 Software Components
+## Software Components
 
 ### ESP32 Firmware
 - I2S microphone input
@@ -148,11 +148,11 @@ The web-based control panel includes:
 - State management
 
 ### AI Models
-- **Voice**: Whisper, Vosk, pyttsx3
-- **Vision**: MediaPipe, OpenCV DNN
-- **NLP**: Transformers, rule-based fallback
+- Voice: Whisper, Vosk, pyttsx3
+- Vision: MediaPipe, OpenCV DNN
+- NLP: Transformers, rule-based fallback
 
-## 📋 Pin Connections
+## Pin Connections
 
 ### ESP32 Pinout
 
@@ -167,7 +167,7 @@ The web-based control panel includes:
 | HC-SR04 ECHO | 18 |
 | DHT22 | 4 |
 
-## 🔧 Development
+## Development
 
 ### Running the GUI
 ```bash
@@ -187,22 +187,22 @@ cd firmware/models
 python install_models.py all
 ```
 
-## 📝 Build Journal
+## Build Journal
 
-See [`docs/journal/`](docs/journal/) for build progress and notes.
+See docs/journal/ for build progress and notes.
 
-## 🤝 Contributing
+## Contributing
 
 1. Fork the repo
 2. Create a feature branch
 3. Make your changes
 4. Submit a pull request
 
-## 📄 License
+## License
 
 MIT License - Feel free to use and modify!
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - OpenAI Whisper
 - MediaPipe
@@ -212,6 +212,6 @@ MIT License - Feel free to use and modify!
 
 ---
 
-**VEAI** - Your Personal AI Companion 🤖
+VEAI - Your Personal AI Companion
 
-*Built with ❤️ using Raspberry Pi + ESP32*
+Built with Raspberry Pi + ESP32
