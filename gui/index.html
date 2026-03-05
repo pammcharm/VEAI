@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VEAI Control Panel</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo-section">
+                <div class="logo">
+                    <svg viewBox="0 0 100 100" class="robot-icon">
+                        <circle cx="50" cy="50" r="45" fill="#0d1b2a" stroke="#00d4ff" stroke-width="3"/>
+                        <!-- Eyes -->
+                        <circle cx="35" cy="40" r="10" fill="#00d4ff" class="eye"/>
+                        <circle cx="65" cy="40" r="10" fill="#00d4ff" class="eye"/>
+                        <!-- Mouth -->
+                        <path d="M 30 65 Q 50 80 70 65" stroke="#00d4ff" stroke-width="3" fill="none"/>
+                        <!-- Antenna -->
+                        <line x1="50" y1="5" x2="50" y2="20" stroke="#00d4ff" stroke-width="3"/>
+                        <circle cx="50" cy="5" r="5" fill="#ff6b6b"/>
+                    </svg>
+                </div>
+                <div class="title">
+                    <h1>VEAI</h1>
+                    <span class="subtitle">Voice • Eyes • Ears AI</span>
+                </div>
+            </div>
+            <div class="status-indicator">
+                <span class="status-dot" id="connectionStatus"></span>
+                <span id="statusText">Connecting...</span>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Left Sidebar - Navigation -->
+            <nav class="sidebar">
+                <ul class="nav-menu">
+                    <li class="nav-item active" data-panel="dashboard">
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="7" height="7"/>
+                            <rect x="14" y="3" width="7" height="7"/>
+                            <rect x="14" y="14" width="7" height="7"/>
+                            <rect x="3" y="14" width="7" height="7"/>
+                        </svg>
+                        <span>Dashboard</span>
+                    </li>
+                    <li class="nav-item" data-panel="vision">
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                            <circle cx="12" cy="12" r="3"/>
+                        </svg>
+                        <span>AI Vision</span>
+                    </li>
+                    <li class="nav-item" data-panel="voice">
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+                            <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+                            <line x1="12" y1="19" x2="12" y2="23"/>
+                            <line x1="8" y1="23" x2="16" y2="23"/>
+                        </svg>
+                        <span>AI Voice</span>
+                    </li>
+                    <li class="nav-item" data-panel="sensors">
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                        </svg>
+                        <span>Sensors</span>
+                    </li>
+                    <li class="nav-item" data-panel="chat">
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                        </svg>
+                        <span>Chat</span>
+                    </li>
+                    <li class="nav-item" data-panel="settings">
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="3"/>
+                            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                        </svg>
+                        <span>Settings</span>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Center Content -->
+            <div class="content-area">
+                <!-- Dashboard Panel -->
+                <section class="panel active" id="dashboard">
+                    <div class="panel-header">
+                        <h2>🤖 Control Dashboard</h2>
+                        <p class="panel-desc">Monitor and control your VEAI robot</p>
+                    </div>
+                    
+                    <!-- Quick Actions -->
+                    <div class="quick-actions">
+                        <button class="action-btn primary" id="btnListen">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+                                <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+                            </svg>
+                            <span>🎤 Listen</span>
+                        </button>
+                        <button class="action-btn success" id="btnSpeak">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+                                <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/>
+                            </svg>
+                            <span>🔊 Speak</span>
+                        </button>
+                        <button class="action-btn warning" id="btnWatch">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                                <circle cx="12" cy="12" r="3"/>
+                            </svg>
+                            <span>👁️ Watch</span>
+                        </button>
+                        <button class="action-btn" id="btnIdle">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/>
+                            </svg>
+                            <span>💤 Idle</span>
+                        </button>
+                    </div>
+
+                    <!-- Status Cards -->
+                    <div class="status-grid">
+                        <div class="status-card">
+                            <div class="card-icon motion">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                                </svg>
+                            </div>
+                            <div class="card-content">
+                                <span class="card-label">Motion</span>
+                                <span class="card-value" id="motionStatus">--</span>
+                            </div>
+                        </div>
+                        <div class="status-card">
+                            <div class="card-icon distance">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M2 12h20M2 12l5-5m-5 5l5 5"/>
+                                </svg>
+                            </div>
+                            <div class="card-content">
+                                <span class="card-label">Distance</span>
+                                <span class="card-value" id="distanceValue">-- cm</span>
+                            </div>
+                        </div>
+                        <div class="status-card">
+                            <div class="card-icon temperature">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"/>
+                                </svg>
+                            </div>
+                            <div class="card-content">
+                                <span class="card-label">Temperature</span>
+                                <span class="card-value" id="tempValue">--°C</span>
+                            </div>
+                        </div>
+                        <div class="status-card">
+                            <div class="card-icon humidity">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+                                </svg>
+                            </div>
+                            <div class="card-content">
+                                <span class="card-label">Humidity</span>
+                                <span class="card-value" id="humidValue">--%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Camera Preview -->
+                    <div class="camera-section">
+                        <div class="camera-header">
+                            <h3>📷 Camera Feed</h3>
+                            <span class="live-badge">
+                                <span class="pulse"></span>
+                                LIVE
+                            </span>
+                        </div>
+                        <div class="camera-feed" id="cameraFeed">
+                            <div class="camera-placeholder">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+                                    <circle cx="12" cy="13" r="4"/>
+                                </svg>
+                                <p>Camera Preview</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Vision Panel -->
+                <section class="panel" id="vision">
+                    <div class="panel-header">
+                        <h2>👁️ AI Vision Control</h2>
+                        <p class="panel-desc">Computer vision processing and object detection</p>
+                    </div>
+                    
+                    <div class="vision-controls">
+                        <button class="vision-btn active" data-vision="objects">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                                <line x1="8" y1="21" x2="16" y2="21"/>
+                                <line x1="12" y1="17" x2="12" y2="21"/>
+                            </svg>
+                            Object Detection
+                        </button>
+                        <button class="vision-btn" data-vision="faces">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="8" r="5"/>
+                                <path d="M3 21v-2a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v2"/>
+                            </svg>
+                            Face Detection
+                        </button>
+                        <button class="vision-btn" data-vision="hands">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 11V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0"/>
+                                <path d="M14 10V4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v2"/>
+                                <path d="M10 10.5V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v8"/>
+                                <path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/>
+                            </svg>
+                            Hand Tracking
+                        </button>
+                        <button class="vision-btn" data-vision="pose">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="5" r="2"/>
+                                <path d="M12 7v5l3 3"/>
+                                <circle cx="6" cy="17" r="2"/>
+                                <circle cx="18" cy="17" r="2"/>
+                                <circle cx="9" cy="12" r="2"/>
+                                <circle cx="15" cy="12" r="2"/>
+                            </svg>
+                            Pose Estimation
+                        </button>
+                    </div>
+                    
+                    <div class="vision-feed">
+                        <div class="detection-results" id="detectionResults">
+                            <p class="placeholder-text">AI Vision Processing</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Voice Panel -->
+                <section class="panel" id="voice">
+                    <div class="panel-header">
+                        <h2>🎤 AI Voice Control</h2>
+                        <p class="panel-desc">Speech recognition and text-to-speech</p>
+                    </div>
+                    
+                    <div class="voice-controls">
+                        <button class="voice-btn record" id="btnRecord">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <circle cx="12" cy="12" r="8"/>
+                            </svg>
+                            Hold to Record
+                        </button>
+                    </div>
+                    
+                    <div class="voice-output">
+                        <h3>Recognized Speech:</h3>
+                        <div class="speech-text" id="recognizedText">
+                            Press the button and speak...
+                        </div>
+                    </div>
+                    
+                    <div class="tts-section">
+                        <h3>Text to Speech:</h3>
+                        <div class="tts-input">
+                            <textarea id="ttsInput" placeholder="Type something for VEAI to speak..."></textarea>
+                            <button class="tts-btn" id="btnTTS">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+                                    <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+                                </svg>
+                                Speak
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Sensors Panel -->
+                <section class="panel" id="sensors">
+                    <div class="panel-header">
+                        <h2>📡 Sensors Dashboard</h2>
+                        <p class="panel-desc">Real-time sensor readings</p>
+                    </div>
+                    
+                    <div class="sensors-grid">
+                        <div class="sensor-item">
+                            <div class="sensor-icon pir">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                                </svg>
+                            </div>
+                            <div class="sensor-info">
+                                <span class="sensor-name">PIR Motion</span>
+                                <span class="sensor-value" id="pirValue">--</span>
+                            </div>
+                        </div>
+                        <div class="sensor-item">
+                            <div class="sensor-icon ultrasonic">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <path d="M12 6v6l4 2"/>
+                                </svg>
+                            </div>
+                            <div class="sensor-info">
+                                <span class="sensor-name">HC-SR04 Distance</span>
+                                <span class="sensor-value" id="ultrasonicValue">-- cm</span>
+                            </div>
+                        </div>
+                        <div class="sensor-item">
+                            <div class="sensor-icon temp">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"/>
+                                </svg>
+                            </div>
+                            <div class="sensor-info">
+                                <span class="sensor-name">DHT22 Temperature</span>
+                                <span class="sensor-value" id="dhtTempValue">--°C</span>
+                            </div>
+                        </div>
+                        <div class="sensor-item">
+                            <div class="sensor-icon hum">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+                                </svg>
+                            </div>
+                            <div class="sensor-info">
+                                <span class="sensor-name">DHT22 Humidity</span>
+                                <span class="sensor-value" id="dhtHumValue">--%</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="sensor-chart">
+                        <h3>Sensor History</h3>
+                        <div class="chart-placeholder">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 3v18h18"/>
+                                <path d="M18 9l-5 5-4-4-3 3"/>
+                            </svg>
+                            <p>Real-time charts coming soon</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Chat Panel -->
+                <section class="panel" id="chat">
+                    <div class="panel-header">
+                        <h2>💬 AI Chat</h2>
+                        <p class="panel-desc">Chat with VEAI's NLP brain</p>
+                    </div>
+                    
+                    <div class="chat-container">
+                        <div class="chat-messages" id="chatMessages">
+                            <div class="message bot">
+                                <div class="message-avatar">🤖</div>
+                                <div class="message-content">
+                                    <p>Hello! I'm VEAI. Ask me anything about my capabilities, sensors, or just chat!</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chat-input">
+                            <input type="text" id="chatInput" placeholder="Type your message...">
+                            <button id="btnSend">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="22" y1="2" x2="11" y2="13"/>
+                                    <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Settings Panel -->
+                <section class="panel" id="settings">
+                    <div class="panel-header">
+                        <h2>⚙️ Settings</h2>
+                        <p class="panel-desc">Configure VEAI preferences</p>
+                    </div>
+                    
+                    <div class="settings-grid">
+                        <div class="setting-group">
+                            <h3>Connection</h3>
+                            <div class="setting-item">
+                                <label>Serial Port</label>
+                                <select id="serialPort">
+                                    <option value="/dev/ttyUSB0">/dev/ttyUSB0</option>
+                                    <option value="/dev/ttyACM0">/dev/ttyACM0</option>
+                                    <option value="COM3">COM3</option>
+                                </select>
+                            </div>
+                            <div class="setting-item">
+                                <label>Baud Rate</label>
+                                <select id="baudRate">
+                                    <option value="115200" selected>115200</option>
+                                    <option value="9600">9600</option>
+                                </select>
+                            </div>
+                            <button class="setting-btn" id="btnConnect">Connect</button>
+                        </div>
+                        
+                        <div class="setting-group">
+                            <h3>Voice Settings</h3>
+                            <div class="setting-item">
+                                <label>Speech Rate</label>
+                                <input type="range" id="speechRate" min="50" max="200" value="150">
+                                <span id="speechRateValue">150</span>
+                            </div>
+                            <div class="setting-item">
+                                <label>Voice Volume</label>
+                                <input type="range" id="volume" min="0" max="100" value="90">
+                                <span id="volumeValue">90%</span>
+                            </div>
+                        </div>
+                        
+                        <div class="setting-group">
+                            <h3>AI Models</h3>
+                            <div class="setting-item">
+                                <label>Voice Recognition</label>
+                                <select id="voiceModel">
+                                    <option value="whisper" selected>Whisper (Best)</option>
+                                    <option value="vosk">Vosk (Fast)</option>
+                                </select>
+                            </div>
+                            <div class="setting-item">
+                                <label>Vision Model</label>
+                                <select id="visionModel">
+                                    <option value="mediapipe" selected>MediaPipe</option>
+                                    <option value="opencv">OpenCV DNN</option>
+                                </select>
+                            </div>
+                            <button class="setting-btn secondary" id="btnReloadModels">Reload Models</button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <span>VEAI Control Panel v1.0</span>
+            <span>•</span>
+            <span>Connected to: <strong id="connectedDevice">None</strong></span>
+        </footer>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
