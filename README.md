@@ -1,5 +1,7 @@
 # VEAI — Voice & Eyes & Ears Artificial Intelligence
 
+![VEAI Logo](logo.png)
+
 VEAI is a local AI interaction device that can **see, hear, and respond** in real time.
 It uses a **Raspberry Pi** for AI processing (Python/OpenCV/voice logic) and an **ESP32** for real-time sensor and hardware control.
 
